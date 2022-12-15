@@ -9,6 +9,16 @@ class Generate extends Thread {
 
     int putValue() { 
         Random random = new Random();
+
+        int rvalue = random.nextInt(r);
+        if (rvalue % 2 == 0) {
+            Square square = new Square(rvalue);
+            square.start();
+        } else {
+            Cube cube = new Cube(rvalue);
+            cube.start();
+        }
+
         return random.nextInt(100);
     }
 }
